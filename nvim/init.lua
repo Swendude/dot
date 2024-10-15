@@ -1,6 +1,7 @@
 require("swendude.packer")
 require("swendude.remap")
 require("swendude.format")
+
 vim.o.relativenumber = true
 vim.o.expandtab = true
 vim.o.smartindent = true
