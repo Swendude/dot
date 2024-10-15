@@ -13,34 +13,33 @@ end
 local packer_bootstrap = ensure_packer()
 
 -- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+vim.cmd([[packadd packer.nvim]])
 
-return require('packer').startup(function(use)
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
-    use {
-        'nvim-telescope/telescope.nvim',
-        tag = '0.1.8',
-        requires = {{'nvim-lua/plenary.nvim'}}
-    }
-    use {
-        'folke/tokyonight.nvim',
-        as = 'tokyonight',
-        config = function()
-            vim.cmd('colorscheme tokyonight-night')
-        end
-    }
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
-    use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {'nvim-tree/nvim-web-devicons'}
-    }
-    use {'mhartington/formatter.nvim'}
-    use {
-        "nvim-telescope/telescope-file-browser.nvim",
-        requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"}
-    }
+return require("packer").startup(function(use)
+	-- Packer can manage itself
+	use("wbthomason/packer.nvim")
+	use({
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.8",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
+	use({
+		"folke/tokyonight.nvim",
+		as = "tokyonight",
+		config = function()
+			vim.cmd("colorscheme tokyonight-night")
+		end,
+	})
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use({ "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" } })
+	use({ "mhartington/formatter.nvim" })
+	use({
+		"nvim-telescope/telescope-file-browser.nvim",
+		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+	})
+	use({
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+	})
 end)
