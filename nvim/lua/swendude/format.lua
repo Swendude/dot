@@ -17,6 +17,11 @@ require("formatter").setup({
 			require("formatter.filetypes.lua").stylua,
 		},
 
+		ts = {
+			require("formatter.defaults.biome"),
+			try_node_modules = true,
+		},
+
 		-- Use the special "*" filetype for defining formatter configurations on
 		-- any filetype
 		["*"] = {

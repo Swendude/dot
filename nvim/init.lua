@@ -1,3 +1,4 @@
+require("swendude.packer")
 require("swendude.remap")
 require("swendude.format")
 vim.o.relativenumber = true
