@@ -1,9 +1,2 @@
-require("swendude.packer")
-require("swendude.remap")
-require("swendude.format")
-
-vim.o.relativenumber = true
-vim.o.expandtab = true
-vim.o.smartindent = true
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
