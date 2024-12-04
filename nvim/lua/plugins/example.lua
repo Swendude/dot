@@ -23,7 +23,19 @@ if true then return {
         "graphql"
       },
     },
-  }
+  },
+  {
+    "neovim/nvim-lspconfig",
+    ---@class PluginLspOpts
+    opts = {
+      ---@type lspconfig.options
+      servers = {
+        graphql = {
+          filetypes = {"graphql", "typescript"}
+        },
+      },
+    },
+  },
 } end
 
 -- every spec file under the "plugins" directory will be loaded automatically by lazy.nvim
