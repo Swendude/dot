@@ -63,3 +63,5 @@ export PATH="$PATH:/nix/var/nix/profiles/default/bin"
 # Enable Vi mode
 bindkey -v
 
+# If on WSL, add a browser
+if uname -r |grep -q 'Microsoft' ; then export BROWSER="/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe"; fi
