@@ -8,5 +8,14 @@ return {
       end,
       desc = "LSP Symbols (funcs)",
     },
+    {
+      "<leader>e",
+      false,
+    },
+  },
+  opts = {
+    explorer = {
+      replace_netrw = false,
+    },
   },
 }
