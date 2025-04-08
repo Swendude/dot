@@ -16,7 +16,7 @@ ZSH_THEME=""
 
 
 plugins=(
-  git tmux docker github
+  git tmux docker github z
 )
 
 source $ZSH/oh-my-zsh.sh
