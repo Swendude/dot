@@ -6,3 +6,5 @@ window-decoration = false
 macos-non-native-fullscreen = true
 fullscreen = true
 font-thicken = true
+keybind = alt+left=unbind
+keybind = alt+right=unbind

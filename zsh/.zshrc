@@ -67,4 +67,4 @@ bindkey -v
 if uname -r |grep -q 'Microsoft' ; then export BROWSER="/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe"; fi
 
 # wtfpl
-alias wtfpl="curl http://www.wtfpl.net/txt/copying/ -o LICENSE.md"
+alias wtfpl="curl https://www.wtfpl.net/txt/copying/ -o LICENSE.md"
