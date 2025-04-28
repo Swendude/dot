@@ -1,7 +1,7 @@
 font-family = "FiraCode Nerd Font Mono"
 font-size = 14
 theme = catppuccin-mocha
-macos-option-as-alt = true
+macos-option-as-alt = left 
 window-decoration = false
 macos-non-native-fullscreen = true
 fullscreen = true
