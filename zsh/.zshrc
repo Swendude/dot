@@ -67,4 +67,10 @@ bindkey -v
 if uname -r |grep -q 'Microsoft' ; then export BROWSER="/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe"; fi
 
 # wtfpl
-alias wtfpl="curl https://www.wtfpl.net/txt/copying/ -o LICENSE.md"
+alias wtfpl="curl http://www.wtfpl.net/txt/copying/ -o LICENSE.md"
+
+# Created by `pipx` on 2025-02-11 19:46:57
+export PATH="$PATH:/home/swen/.local/bin"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
