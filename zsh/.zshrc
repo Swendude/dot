@@ -1,8 +1,3 @@
-# Pure Path
-fpath+=($HOME/.config/omz/themes/pure) 
-autoload -U promptinit; promptinit
-prompt pure
-
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -20,6 +15,11 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# Pure Path
+fpath+=($HOME/.config/omz/themes/pure) 
+autoload -U promptinit; promptinit
+prompt pure
 
 # Startup Tmux with a root session
 if [ "$TMUX" = "" ]; then tmux new-session -As root; fi
