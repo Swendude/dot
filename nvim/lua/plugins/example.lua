@@ -28,7 +28,6 @@ if true then return {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {
-      ---@type lspconfig.options
       servers = {
         graphql = {
           filetypes = {"graphql", "typescript"}
