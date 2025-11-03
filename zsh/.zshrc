@@ -34,7 +34,6 @@ fi
 # Direnv setup
 eval "$(direnv hook zsh)"
 
-
 export GPG_TTY=$(tty)
 alias python=python
 
@@ -49,6 +48,9 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# Claude with homebrew installed here
+PATH="$HOME/.local/bin:$PATH"
 
 # Dotnet
 export PATH="$PATH:/usr/local/share/dotnet/dotnet"
