@@ -125,6 +125,7 @@ alt-t = 'workspace teams'
 alt-s = 'workspace slack'
 alt-m = 'workspace spotify'
 alt-d = 'workspace discord'
+alt-o = 'workspace obsidian'
 alt-c = 'workspace calendar'
 alt-esc = 'workspace terminal'
 
@@ -177,6 +178,10 @@ alt-shift-l = ['join-with right', 'mode main']
 8 = 2
 9 = 2
 10 = 2
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = 'move-node-to-workspace obsidian'
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.teams2'

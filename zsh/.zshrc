@@ -34,7 +34,6 @@ fi
 # Direnv setup
 eval "$(direnv hook zsh)"
 
-
 export GPG_TTY=$(tty)
 alias python=python
 
@@ -50,6 +49,9 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# Claude with homebrew installed here
+PATH="$HOME/.local/bin:$PATH"
+
 # Dotnet
 export PATH="$PATH:/usr/local/share/dotnet/dotnet"
 export PATH="$PATH:/Users/swen/.dotnet/tools"
@@ -64,7 +66,9 @@ export PATH="$PATH:/nix/var/nix/profiles/default/bin"
 bindkey -v
 
 # If on WSL, add a browser
-if uname -r |grep -q 'Microsoft' ; then export BROWSER="/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe"; fi
+if uname -r | grep -q 'Microsoft' ; then export BROWSER="/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe"; fi
+
+if uname -r | grep -q 'Microsoft' ; then export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 # wtfpl
 alias wtfpl="curl http://www.wtfpl.net/txt/copying/ -o LICENSE.md"
@@ -74,3 +78,6 @@ export PATH="$PATH:/home/swen/.local/bin"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
+
+# Go Path
+export PATH="$PATH:/usr/local/go/bin"
