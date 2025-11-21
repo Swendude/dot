@@ -17,5 +17,8 @@ return {
     explorer = {
       replace_netrw = false,
     },
+    dashboard = {
+      enabled = false,
+    },
   },
 }

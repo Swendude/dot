@@ -68,7 +68,7 @@ bindkey -v
 # If on WSL, add a browser
 if uname -r | grep -q 'Microsoft' ; then export BROWSER="/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe"; fi
 
-if uname -r | grep -q 'Microsoft' ; then export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+if uname -r | grep -q 'Microsoft' ; then export PATH="$PATH:/opt/nvim-linux-x86_64/bin"; fi
 
 # wtfpl
 alias wtfpl="curl http://www.wtfpl.net/txt/copying/ -o LICENSE.md"
