@@ -78,6 +78,3 @@ export PATH="$PATH:/home/swen/.local/bin"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
-
-# Go Path
-export PATH="$PATH:/usr/local/go/bin"
