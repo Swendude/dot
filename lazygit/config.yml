@@ -1,0 +1,26 @@
+customCommands:
+  # Create worktree from current HEAD (works anywhere)
+  - key: 'W'
+    command: 'git worktree add -b {{index .PromptResponses 0}} {{index .PromptResponses 1}}/{{index .PromptResponses 0}}'
+    context: 'global'
+    description: 'Create new branch as worktree (from HEAD)'
+    prompts:
+      - type: 'input'
+        title: 'New branch name:'
+      - type: 'input'
+        title: 'Worktrees parent directory:'
+        initialValue: '..'
+    loadingText: 'Creating worktree...'
+
+  # Create worktree from selected branch (only in branches view)
+  - key: '<c-w>'
+    command: 'git worktree add -b {{index .PromptResponses 0}} {{index .PromptResponses 1}}/{{index .PromptResponses 0}} {{.SelectedLocalBranch.Name}}'
+    context: 'localBranches'
+    description: 'Create new branch as worktree from selected branch'
+    prompts:
+      - type: 'input'
+        title: 'New branch name:'
+      - type: 'input'
+        title: 'Worktrees parent directory:'
+        initialValue: '..'
+    loadingText: 'Creating worktree...'
