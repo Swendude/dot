@@ -1,26 +1,22 @@
 customCommands:
-  # Create worktree from current HEAD (works anywhere)
-  - key: 'W'
-    command: 'git worktree add -b {{index .PromptResponses 0}} {{index .PromptResponses 1}}/{{index .PromptResponses 0}}'
-    context: 'global'
-    description: 'Create new branch as worktree (from HEAD)'
+  # Create worktree from current branch (when in worktrees view)
+  - key: 'N'
+    context: 'worktrees'
+    description: 'Create new worktree from current branch'
     prompts:
       - type: 'input'
-        title: 'New branch name:'
-      - type: 'input'
-        title: 'Worktrees parent directory:'
-        initialValue: '..'
-    loadingText: 'Creating worktree...'
+        title: 'Create a new worktree from {{ .CheckedOutBranch.Name }} with what name?'
+        key: 'Name'
+        initialValue: ''
+    command: 'git worktree add ../{{ .Form.Name }} {{ .CheckedOutBranch.Name }} -b {{ .Form.Name }}'
 
-  # Create worktree from selected branch (only in branches view)
-  - key: '<c-w>'
-    command: 'git worktree add -b {{index .PromptResponses 0}} {{index .PromptResponses 1}}/{{index .PromptResponses 0}} {{.SelectedLocalBranch.Name}}'
+  # Create worktree from selected branch (when in branches view)
+  - key: 'N'
     context: 'localBranches'
-    description: 'Create new branch as worktree from selected branch'
+    description: 'Create new worktree from selected branch'
     prompts:
       - type: 'input'
-        title: 'New branch name:'
-      - type: 'input'
-        title: 'Worktrees parent directory:'
-        initialValue: '..'
-    loadingText: 'Creating worktree...'
+        title: 'Create a new worktree from {{ .SelectedLocalBranch.Name }} with what name?'
+        key: 'Name'
+        initialValue: ''
+    command: 'git worktree add ../{{ .Form.Name }} {{ .SelectedLocalBranch.Name }} -b {{ .Form.Name }}'
