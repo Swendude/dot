@@ -11,7 +11,7 @@ ZSH_THEME=""
 
 
 plugins=(
-  git tmux docker github z dotenv
+  git tmux docker github z dotenv task
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -78,6 +78,3 @@ export PATH="$PATH:/home/swen/.local/bin"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
-
-# peon-ping quick controls
-alias peon="bash ~/.claude/hooks/peon-ping/peon.sh"
