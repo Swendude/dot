@@ -35,11 +35,18 @@ fi
 eval "$(direnv hook zsh)"
 
 export GPG_TTY=$(tty)
-alias python=python
 
+# Lazy-load NVM — only initializes when you first call node/npm/npx/nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+lazy_load_nvm() {
+  unset -f nvm node npm npx
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
+nvm()  { lazy_load_nvm && nvm "$@"; }
+node() { lazy_load_nvm && node "$@"; }
+npm()  { lazy_load_nvm && npm "$@"; }
+npx()  { lazy_load_nvm && npx "$@"; }
 
 # pnpm
 export PNPM_HOME="/Users/swen/Library/pnpm"
@@ -59,6 +66,9 @@ export PATH="$PATH:/Users/swen/.dotnet/tools"
 # Lazygit
 alias lg=lazygit
 
+# OpenCode
+alias ocp='opencode --port'
+
 # Nix
 export PATH="$PATH:/nix/var/nix/profiles/default/bin"
 
@@ -75,6 +85,12 @@ alias wtfpl="curl http://www.wtfpl.net/txt/copying/ -o LICENSE.md"
 
 # Created by `pipx` on 2025-02-11 19:46:57
 export PATH="$PATH:/home/swen/.local/bin"
+# Lazy-load pyenv — only initializes when you first call python/pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
+lazy_load_pyenv() {
+  unset -f python pyenv
+  eval "$(pyenv init - zsh)"
+}
+python() { lazy_load_pyenv && python "$@"; }
+pyenv()  { lazy_load_pyenv && pyenv "$@"; }
