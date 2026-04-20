@@ -49,7 +49,11 @@ npm()  { lazy_load_nvm && npm "$@"; }
 npx()  { lazy_load_nvm && npx "$@"; }
 
 # pnpm
-export PNPM_HOME="/Users/swen/Library/pnpm"
+if [[ "$(uname)" == "Darwin" ]]; then
+  export PNPM_HOME="$HOME/Library/pnpm"
+else
+  export PNPM_HOME="$HOME/.local/share/pnpm"
+fi
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
