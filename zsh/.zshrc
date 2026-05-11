@@ -39,14 +39,16 @@ export GPG_TTY=$(tty)
 # Lazy-load NVM — only initializes when you first call node/npm/npx/nvm
 export NVM_DIR="$HOME/.nvm"
 lazy_load_nvm() {
-  unset -f nvm node npm npx
+  unset -f nvm node npm npx pnpm
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+  return 0
 }
 nvm()  { lazy_load_nvm && nvm "$@"; }
 node() { lazy_load_nvm && node "$@"; }
 npm()  { lazy_load_nvm && npm "$@"; }
 npx()  { lazy_load_nvm && npx "$@"; }
+pnpm() { lazy_load_nvm && pnpm "$@"; }
 
 # pnpm
 if [[ "$(uname)" == "Darwin" ]]; then
