@@ -89,6 +89,9 @@ if uname -r | grep -q 'Microsoft' ; then export PATH="$PATH:/opt/nvim-linux-x86_
 # wtfpl
 alias wtfpl="curl http://www.wtfpl.net/txt/copying/ -o LICENSE.md"
 
+#commit
+alias commit="git commit -m 'commit'"
+
 # Created by `pipx` on 2025-02-11 19:46:57
 export PATH="$PATH:/home/swen/.local/bin"
 # Lazy-load pyenv — only initializes when you first call python/pyenv
