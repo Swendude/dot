@@ -31,9 +31,6 @@ else
   export EDITOR='nvim'
 fi
 
-# Direnv setup
-eval "$(direnv hook zsh)"
-
 export GPG_TTY=$(tty)
 
 # Lazy-load NVM — only initializes when you first call node/npm/npx/nvm
