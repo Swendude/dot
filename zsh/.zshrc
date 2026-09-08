@@ -22,7 +22,7 @@ autoload -U promptinit; promptinit
 prompt pure
 
 # Startup Tmux with a root session
-if [ "$TMUX" = "" ]; then tmux new-session -As root; fi
+if [ "$TMUX" = "" ] && [ ! -f "$HOME/.disable-tmux-startup" ]; then tmux new-session -As root; fi
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
