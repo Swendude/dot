@@ -88,15 +88,3 @@ alias wtfpl="curl http://www.wtfpl.net/txt/copying/ -o LICENSE.md"
 
 #commit
 alias commit="git commit -m 'commit'"
-
-# Created by `pipx` on 2025-02-11 19:46:57
-export PATH="$PATH:/home/swen/.local/bin"
-# Lazy-load pyenv — only initializes when you first call python/pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-lazy_load_pyenv() {
-  unset -f python pyenv
-  eval "$(pyenv init - zsh)"
-}
-python() { lazy_load_pyenv && python "$@"; }
-pyenv()  { lazy_load_pyenv && pyenv "$@"; }
