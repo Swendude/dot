@@ -12,3 +12,4 @@ confirm-close-surface=false
 clipboard-read=allow
 clipboard-write=ask
 copy-on-select=false
+keybind = shift+enter=text:\x1b\r
