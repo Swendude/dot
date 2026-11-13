@@ -11,7 +11,7 @@ ZSH_THEME=""
 
 
 plugins=(
-  git tmux docker github z dotenv task
+  git tmux docker gh z dotenv task
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -31,8 +31,6 @@ else
   export EDITOR='nvim'
 fi
 
-# Direnv setup
-eval "$(direnv hook zsh)"
 
 export GPG_TTY=$(tty)
 
@@ -73,7 +71,8 @@ export PATH="$PATH:/Users/swen/.dotnet/tools"
 alias lg=lazygit
 
 # OpenCode
-alias ocp='opencode --port'
+alias ocp='opencode'
+alias oc='opencode'
 
 # Nix
 export PATH="$PATH:/nix/var/nix/profiles/default/bin"
