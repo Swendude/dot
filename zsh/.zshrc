@@ -31,7 +31,6 @@ else
   export EDITOR='nvim'
 fi
 
-
 export GPG_TTY=$(tty)
 
 # Lazy-load NVM — only initializes when you first call node/npm/npx/nvm
